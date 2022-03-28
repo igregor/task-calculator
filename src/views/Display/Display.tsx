@@ -59,11 +59,11 @@ function getParsedOperator(operator: Operator): string {
   switch (operator) {
     case "addition":
       return "+";
-    case "division":
+    case "substraction":
       return "-";
     case "multiplication":
       return "*";
-    case "substraction":
+    case "division":
       return "/";
   }
 }

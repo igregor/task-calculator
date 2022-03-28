@@ -35,7 +35,7 @@ describe("<Display />", () => {
     test("renders leftOperand and operator when both are defined", () => {
       const { assert } = renderDisplay({
         leftOperand: 123,
-        operator: "division",
+        operator: "substraction",
       });
 
       assert.rendersInEquation("123 -");
