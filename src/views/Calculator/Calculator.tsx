@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Box from "@mui/material/Box";
 
 import Display from "../Display";
 import Keypad from "../Keypad";
+import { Operator } from "../../types/operators";
 
 const Calculator: React.FC = () => {
+  const [leftOperand, setLeftOperand] = useState<number | undefined>();
+  const [operator, setOperator] = useState<Operator | undefined>();
+  const [rightOperand, setRightOperand] = useState<number | undefined>();
+  const [result, setResult] = useState<number | undefined>();
+
   return (
     <Box
       data-testid="calculator"
@@ -17,11 +23,10 @@ const Calculator: React.FC = () => {
       }}
     >
       <Display
-        // TODO @g.wojtanowicz Replace with states
-        operator="addition"
-        leftOperand={100000}
-        rightOperand={218309182}
-        result={12345678901234567890.234234}
+        leftOperand={leftOperand}
+        operator={operator}
+        rightOperand={rightOperand}
+        result={result}
       />
       {/* // TODO @g.wojtanowicz Replace with correct callback */}
       <Box sx={{ pt: 2 }}>

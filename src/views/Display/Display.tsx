@@ -5,8 +5,7 @@ import Paper from "@mui/material/Paper";
 
 import LogoBackground from "./LogoBackground";
 import DisplayText from "./DisplayText";
-
-type Operator = "addition" | "substraction" | "multiplication" | "division";
+import { Operator } from "../../types/operators";
 
 export interface DisplayProps {
   leftOperand?: number;
