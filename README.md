@@ -12,9 +12,22 @@ Linkedin: https://www.linkedin.com/in/grzegorz-w-70270529/
 
 5b8d0fd276b6d288905ed2f63a934e057e8feca2
 
+## Equal Experts Theme
+
+### Colors
+
+- blue: `#1795d4`
+- yellow: `#fed800`
+- light gray: `#f5f5f5`
+- dark gray: `#373d45`
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `yarn install`
+
+Install dependencies.
 
 ### `yarn start`
 
