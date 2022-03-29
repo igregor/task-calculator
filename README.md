@@ -55,3 +55,13 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `yarn serve:build`
 
 Serves your production build. Please run `yarn build` before.
+
+## TODO
+
+Known issues to be solved:
+
+- handle floating point, e.g. `0.1 + 0.2 =`
+  > read more:
+  >
+  > https://stackoverflow.com/questions/588004/is-floating-point-math-broken > https://stackoverflow.com/questions/1458633/how-to-deal-with-floating-point-number-precision-in-javascript
+- errors handling, e.g. `can't divide with 0`
