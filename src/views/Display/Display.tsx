@@ -8,10 +8,10 @@ import DisplayText from "./DisplayText";
 import { Operator } from "../../types/operators";
 
 export interface DisplayProps {
-  leftOperand?: number;
-  rightOperand?: number;
+  leftOperand?: string;
+  rightOperand?: string;
   operator?: Operator;
-  result?: number;
+  result?: string;
 }
 
 const Display: React.FC<DisplayProps> = ({
@@ -35,17 +35,13 @@ const Display: React.FC<DisplayProps> = ({
       ? rightOperand
       : "";
 
-  const equation = (
-    <>
-      {parsedLeftOperand} {parsedOperator} {parsedRightOperand}
-    </>
-  );
+  const equation = `${parsedLeftOperand} ${parsedOperator} ${parsedRightOperand}`;
 
   return (
     <Box data-testid="display">
       <Paper elevation={1}>
         <LogoBackground />
-        <DisplayText type="history">{result && equation}</DisplayText>
+        <DisplayText type="history">{result ? equation : ""}</DisplayText>
         <DisplayText type="equation">{result ? result : equation}</DisplayText>
       </Paper>
     </Box>

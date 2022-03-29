@@ -16,13 +16,41 @@ describe("<Calculator />", () => {
     assert.display.rendersZero();
   });
 
-  test("displays 12 when user pressed '1' '2' buttons", () => {
+  test("displays '12' when user pressed '1' '2' buttons", () => {
     const { assert, act } = renderCalculator();
 
     act.clickButton("1");
     act.clickButton("2");
 
     assert.display.rendersInEquation("12");
+  });
+
+  test("displays '0' when user pressed '0' '0' buttons", () => {
+    const { assert, act } = renderCalculator();
+
+    act.clickButton("0");
+    act.clickButton("0");
+
+    assert.display.rendersInEquation("0");
+  });
+
+  test("displays '0.' when user pressed '0' '.' buttons", () => {
+    const { assert, act } = renderCalculator();
+
+    act.clickButton("0");
+    act.clickButton(".");
+
+    assert.display.rendersInEquation("0.");
+  });
+
+  test("displays '0.' when user pressed '0' '.' '.' buttons", () => {
+    const { assert, act } = renderCalculator();
+
+    act.clickButton("0");
+    act.clickButton(".");
+    act.clickButton(".");
+
+    assert.display.rendersInEquation("0.");
   });
 
   test("displays '12 +' when user pressed '1' '2' and '+' buttons", () => {
@@ -32,7 +60,7 @@ describe("<Calculator />", () => {
     act.clickButton("2");
     act.clickButton("+");
 
-    assert.display.rendersInEquation("123 +");
+    assert.display.rendersInEquation("12 +");
   });
 
   test("displays '12 + 3' when user pressed '1' '2' and '+' and '3' buttons", () => {
@@ -43,7 +71,7 @@ describe("<Calculator />", () => {
     act.clickButton("+");
     act.clickButton("3");
 
-    assert.display.rendersInEquation("12 + 4");
+    assert.display.rendersInEquation("12 + 3");
   });
 
   test("displays '12 + 3' in history and '15' in equation when user pressed '1' '2' and '+' and '3' and '=' buttons", () => {
@@ -70,18 +98,22 @@ describe("<Calculator />", () => {
       assert.display.rendersInEquation("0");
     });
 
-    test("clears equation and history", () => {
+    test("clears equation and history, allow to type again", () => {
       const { assert, act } = renderCalculator();
 
       act.clickButton("1");
       act.clickButton("+");
       act.clickButton("1");
+      act.clickButton("=");
       assert.display.rendersInEquation("2");
       assert.display.rendersInHistory("1 + 1");
 
       act.clickButton("C");
       assert.display.rendersInHistory("");
       assert.display.rendersInEquation("0");
+
+      act.clickButton("1");
+      assert.display.rendersInEquation("1");
     });
   });
 });
@@ -98,7 +130,9 @@ function buildPageObject() {
   const pageObject = {
     act: {
       clickButton: (buttonText: string) => {
-        const buttonElement = screen.getByText(buttonText);
+        const buttonElement = within(screen.getByTestId("keypad")).getByText(
+          buttonText
+        );
 
         fireEvent.click(buttonElement);
       },

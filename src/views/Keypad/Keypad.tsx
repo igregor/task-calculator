@@ -7,27 +7,49 @@ import { onKeyClickValue } from "./types";
 
 type ButtonItem = Pick<
   KeypadButtonProps,
-  "label" | "value" | "gridArea" | "variant"
+  "label" | "value" | "type" | "gridArea" | "variant"
 >;
 
 const buttons: ButtonItem[] = [
-  { value: 0, label: "0", gridArea: "zero" },
-  { value: 1, label: "1", gridArea: "one" },
-  { value: 2, label: "2", gridArea: "two" },
-  { value: 3, label: "3", gridArea: "three" },
-  { value: 4, label: "4", gridArea: "four" },
-  { value: 5, label: "5", gridArea: "five" },
-  { value: 6, label: "6", gridArea: "six" },
-  { value: 7, label: "7", gridArea: "seven" },
-  { value: 8, label: "8", gridArea: "eight" },
-  { value: 9, label: "9", gridArea: "nine" },
-  { value: "comma", label: ".", gridArea: "comma" },
-  { value: "addition", label: "+", gridArea: "addition" },
-  { value: "substraction", label: "-", gridArea: "substraction" },
-  { value: "multiplication", label: "*", gridArea: "multiplication" },
-  { value: "division", label: "/", gridArea: "division" },
-  { value: "clear", label: "C", gridArea: "clear", variant: "action" },
-  { value: "result", label: "=", gridArea: "result", variant: "highlighted" },
+  { value: "0", label: "0", gridArea: "zero", type: "numeric" },
+  { value: "1", label: "1", gridArea: "one", type: "numeric" },
+  { value: "2", label: "2", gridArea: "two", type: "numeric" },
+  { value: "3", label: "3", gridArea: "three", type: "numeric" },
+  { value: "4", label: "4", gridArea: "four", type: "numeric" },
+  { value: "5", label: "5", gridArea: "five", type: "numeric" },
+  { value: "6", label: "6", gridArea: "six", type: "numeric" },
+  { value: "7", label: "7", gridArea: "seven", type: "numeric" },
+  { value: "8", label: "8", gridArea: "eight", type: "numeric" },
+  { value: "9", label: "9", gridArea: "nine", type: "numeric" },
+  { value: ".", label: ".", gridArea: "comma", type: "numeric" },
+  { value: "addition", label: "+", gridArea: "addition", type: "action" },
+  {
+    value: "substraction",
+    label: "-",
+    gridArea: "substraction",
+    type: "action",
+  },
+  {
+    value: "multiplication",
+    label: "*",
+    gridArea: "multiplication",
+    type: "action",
+  },
+  { value: "division", label: "/", gridArea: "division", type: "action" },
+  {
+    value: "clear",
+    label: "C",
+    gridArea: "clear",
+    variant: "action",
+    type: "action",
+  },
+  {
+    value: "result",
+    label: "=",
+    gridArea: "result",
+    variant: "highlighted",
+    type: "action",
+  },
 ];
 
 export interface KeypadProps {
@@ -58,6 +80,7 @@ const Keypad: React.FC<KeypadProps> = ({ onClick }) => {
           key={button.value}
           label={button.label}
           value={button.value}
+          type={button.type}
           gridArea={button.gridArea}
           variant={button.variant}
           onClick={onClick}

@@ -2,11 +2,12 @@ import React, { useCallback, useMemo } from "react";
 
 import Button from "@mui/material/Button";
 
-import { onKeyClickValue } from "./types";
+import { onKeyClickValue, KeyType } from "./types";
 
 export interface KeypadButtonProps {
   label: string;
   value: string | number;
+  type: KeyType;
   gridArea: string;
   variant?: "default" | "action" | "highlighted";
   onClick(value: onKeyClickValue): void;
@@ -15,13 +16,14 @@ export interface KeypadButtonProps {
 const KeypadButton: React.FC<KeypadButtonProps> = ({
   label,
   value,
+  type,
   gridArea,
   variant = "default",
   onClick,
 }) => {
   const onClickHandler = useCallback(() => {
-    onClick(value);
-  }, [onClick, value]);
+    onClick({ value, type });
+  }, [onClick, value, type]);
 
   const color = useMemo((): "primary" | "secondary" | "success" => {
     switch (variant) {

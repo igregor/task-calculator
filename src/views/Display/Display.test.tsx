@@ -17,7 +17,7 @@ describe("<Display />", () => {
     });
 
     test("when leftOperand is not defined, but rightOperand is defined", () => {
-      const { assert } = renderDisplay({ rightOperand: 456 });
+      const { assert } = renderDisplay({ rightOperand: "456" });
 
       assert.rendersZero();
     });
@@ -26,7 +26,7 @@ describe("<Display />", () => {
   describe("equation", () => {
     test("renders leftOperand when is defined", () => {
       const { assert } = renderDisplay({
-        leftOperand: 123,
+        leftOperand: "123",
       });
 
       assert.rendersInEquation("123");
@@ -34,7 +34,7 @@ describe("<Display />", () => {
 
     test("renders leftOperand and operator when both are defined", () => {
       const { assert } = renderDisplay({
-        leftOperand: 123,
+        leftOperand: "123",
         operator: "substraction",
       });
 
@@ -43,9 +43,9 @@ describe("<Display />", () => {
 
     test("renders equation when leftOperand and operator, and rightOperand are defined", () => {
       const { assert } = renderDisplay({
-        leftOperand: 123,
+        leftOperand: "123",
         operator: "addition",
-        rightOperand: 456,
+        rightOperand: "456",
       });
 
       assert.rendersInEquation("123 + 456");
@@ -53,8 +53,8 @@ describe("<Display />", () => {
 
     test("renders leftOperand only when rightOperand is defined but operator is missing", () => {
       const { assert } = renderDisplay({
-        leftOperand: 123,
-        rightOperand: 456,
+        leftOperand: "123",
+        rightOperand: "456",
       });
 
       assert.rendersInEquation("123");
@@ -64,10 +64,10 @@ describe("<Display />", () => {
   describe("result", () => {
     test("renders result and shifts equation to history", () => {
       const { assert } = renderDisplay({
-        leftOperand: 2,
+        leftOperand: "2",
         operator: "multiplication",
-        rightOperand: 4,
-        result: 8,
+        rightOperand: "4",
+        result: "8",
       });
 
       assert.rendersInEquation("8");
