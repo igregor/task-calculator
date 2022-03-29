@@ -5,12 +5,12 @@ import Paper from "@mui/material/Paper";
 
 import LogoBackground from "./LogoBackground";
 import DisplayText from "./DisplayText";
-import { Operator } from "../../types/operators";
+import { OperatorKey } from "../Keypad/types";
 
 export interface DisplayProps {
   leftOperand?: string;
   rightOperand?: string;
-  operator?: Operator;
+  operator?: OperatorKey;
   result?: string;
 }
 
@@ -24,9 +24,7 @@ const Display: React.FC<DisplayProps> = ({
     typeof leftOperand === "undefined" ? 0 : leftOperand;
 
   const parsedOperator =
-    operator && typeof leftOperand !== "undefined"
-      ? getParsedOperator(operator)
-      : "";
+    operator && typeof leftOperand !== "undefined" ? operator : "";
 
   const parsedRightOperand =
     typeof leftOperand !== "undefined" &&
@@ -49,16 +47,3 @@ const Display: React.FC<DisplayProps> = ({
 };
 
 export default Display;
-
-function getParsedOperator(operator: Operator): string {
-  switch (operator) {
-    case "addition":
-      return "+";
-    case "substraction":
-      return "-";
-    case "multiplication":
-      return "*";
-    case "division":
-      return "/";
-  }
-}

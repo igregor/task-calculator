@@ -11,7 +11,7 @@ describe("<Display />", () => {
     });
 
     test("when leftOperand is not defined, but operator is defined", () => {
-      const { assert } = renderDisplay({ operator: "addition" });
+      const { assert } = renderDisplay({ operator: "+" });
 
       assert.rendersZero();
     });
@@ -35,7 +35,7 @@ describe("<Display />", () => {
     test("renders leftOperand and operator when both are defined", () => {
       const { assert } = renderDisplay({
         leftOperand: "123",
-        operator: "substraction",
+        operator: "-",
       });
 
       assert.rendersInEquation("123 -");
@@ -44,7 +44,7 @@ describe("<Display />", () => {
     test("renders equation when leftOperand and operator, and rightOperand are defined", () => {
       const { assert } = renderDisplay({
         leftOperand: "123",
-        operator: "addition",
+        operator: "+",
         rightOperand: "456",
       });
 
@@ -65,7 +65,7 @@ describe("<Display />", () => {
     test("renders result and shifts equation to history", () => {
       const { assert } = renderDisplay({
         leftOperand: "2",
-        operator: "multiplication",
+        operator: "*",
         rightOperand: "4",
         result: "8",
       });

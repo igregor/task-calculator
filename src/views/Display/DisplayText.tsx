@@ -12,7 +12,7 @@ const DisplayText: React.FC<DisplayTextProps> = ({ type, children }) => {
   return (
     <Box
       sx={{
-        // NOTE @g.wojtanowicz Keep the long numbers hidden and aligned to right
+        // NOTE @g.wojtanowicz To keep the long numbers hidden and aligned to right
         // read more: https://stackoverflow.com/questions/218065/overflow-to-left-instead-of-right/12646655#12646655
         whiteSpace: "nowrap",
         overflowX: "hidden",
@@ -20,7 +20,7 @@ const DisplayText: React.FC<DisplayTextProps> = ({ type, children }) => {
     >
       <Typography
         data-testid={type}
-        // NOTE @g.wojtanowicz Keep the long numbers hidden and aligned to right
+        // NOTE @g.wojtanowicz To keep the long numbers hidden and aligned to right
         align="right"
         sx={{
           float: "right",
