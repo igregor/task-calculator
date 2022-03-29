@@ -12,6 +12,10 @@ Linkedin: https://www.linkedin.com/in/grzegorz-w-70270529/
 
 5b8d0fd276b6d288905ed2f63a934e057e8feca2
 
+## Demo
+
+https://ee.igregor.pl/
+
 ## Equal Experts Theme
 
 ### Colors
@@ -61,7 +65,11 @@ Serves your production build. Please run `yarn build` before.
 Known issues to be solved:
 
 - handle floating point, e.g. `0.1 + 0.2 =`
+
   > read more:
   >
-  > https://stackoverflow.com/questions/588004/is-floating-point-math-broken > https://stackoverflow.com/questions/1458633/how-to-deal-with-floating-point-number-precision-in-javascript
+  > https://stackoverflow.com/questions/588004/is-floating-point-math-broken
+  >
+  > https://stackoverflow.com/questions/1458633/how-to-deal-with-floating-point-number-precision-in-javascript
+
 - errors handling, e.g. `can't divide with 0`
