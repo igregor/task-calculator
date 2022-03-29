@@ -87,7 +87,7 @@ const useCalculator = () => {
       } else if (pointerPosition === "leftOperand") {
         if (isNumericKeyOrComma(key)) {
           setLeftOperandValue(key);
-        } else if (isOperatorKey(key)) {
+        } else if (leftOperand !== undefined && isOperatorKey(key)) {
           setOperator(key);
           setPointerPosition("operator");
         }
@@ -110,6 +110,7 @@ const useCalculator = () => {
     [
       setCalculatedResult,
       clearAll,
+      leftOperand,
       pointerPosition,
       setLeftOperandValue,
       setRightOperandValue,

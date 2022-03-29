@@ -80,6 +80,17 @@ describe("<Calculator />", () => {
     assert.display.rendersInEquation("15");
   });
 
+  describe("when initial state, pressing operator key first", () => {
+    test("do not break adding numbers", () => {
+      const { assert, act } = renderCalculator();
+
+      act.clickKey("/");
+      act.clickKey("1");
+
+      assert.display.rendersInEquation("1");
+    });
+  });
+
   describe("pressing clear button", () => {
     test("clears equation", () => {
       const { assert, act } = renderCalculator();
