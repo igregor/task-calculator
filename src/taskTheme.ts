@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
-const equalExpertsTheme = createTheme({
+const taskTheme = createTheme({
   palette: {
     primary: { main: "#1795d4" },
     secondary: { main: "#fed800" },
@@ -12,4 +12,4 @@ const equalExpertsTheme = createTheme({
   },
 });
 
-export default equalExpertsTheme;
+export default taskTheme;

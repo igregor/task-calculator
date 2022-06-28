@@ -3,12 +3,12 @@ import React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 
-import equalExpertsTheme from "./equalExpertsTheme";
+import taskTheme from "./taskTheme";
 import Calculator from "./views/Calculator";
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider theme={equalExpertsTheme}>
+    <ThemeProvider theme={taskTheme}>
       <CssBaseline />
       <Calculator />
     </ThemeProvider>

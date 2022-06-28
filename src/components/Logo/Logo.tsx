@@ -2,8 +2,6 @@ import React from "react";
 
 import Box from "@mui/material/Box";
 
-import logo from "./equal-experts-logo.svg";
-
 const Logo: React.FC = () => {
   return (
     <Box
@@ -14,9 +12,7 @@ const Logo: React.FC = () => {
         display: "flex",
         alignItems: "center",
       }}
-    >
-      <img src={logo} width="100%" alt="Equal Experts" />
-    </Box>
+    ></Box>
   );
 };
 

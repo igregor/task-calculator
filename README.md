@@ -1,4 +1,4 @@
-# Equal Experts calculator
+# Task calculator
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -8,15 +8,11 @@ Grzegorz Wojtanowicz <g.wojtanowicz@gmail.com>
 
 Linkedin: https://www.linkedin.com/in/grzegorz-w-70270529/
 
-## Task version number
-
-5b8d0fd276b6d288905ed2f63a934e057e8feca2
-
 ## Demo
 
 https://ee.igregor.pl/
 
-## Equal Experts Theme
+## Task Theme
 
 ### Colors
 
